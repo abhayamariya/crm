@@ -1,0 +1,9 @@
+.port{
+    height: 100vh;
+}
+
+.grad{
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+
+    }

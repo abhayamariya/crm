@@ -1,0 +1,45 @@
+from django.db import models
+
+class Employees(models.Model):
+    name=models.CharField(max_length=200)
+    department=models.CharField(max_length=200)
+    salary=models.PositiveIntegerField()
+    email=models.EmailField(unique=True)
+    contact=models.CharField(max_length=10,null=True)
+    age=models.PositiveIntegerField()
+
+
+* orm query for creating a new object:-
+>>Employees.objects.create(name="hari",department="hr",salary=45000,email="hari@gmail.com",age=30,contact="test")
+
+
+* orm query for fetching all records:-
+>>qs=Employees.objects.all()
+
+
+* orm query for fectching a specific Employee details:-
+>>qs=Employees.objects.get(id=1)
+
+
+orm query for filtering query records:-
+>>qs=Employees.objects.filter(department="hr")
+>>__gte= greater than equal to
+*__lte= less than equal to<=
+
+orm query for excluding an object:-
+>>qs=Employees.objects.exclude(department="hr" )
+
+orm query for updating:-
+>>Employees.objects.filter(id=2).update(contact="new contact",age=45)
+
+orm query for delete:-
+>>Employees.objects.filter(id=2).delete()
+
+orm query for sorting:-
+>>Employees.objects.all().order_by("salary")
+ 
+query for sorting in descending order:-
+>>Employees.objects.all().order_by("-salary")
+
+
+
